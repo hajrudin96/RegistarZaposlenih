@@ -25,6 +25,18 @@ namespace Vjezba5
         public string JobPeriodDate { get; set; }
         public string BasicSalary { get; set; }
 
+        public string GetFullName()
+        {
+            string fullName = FirstName + ", " + LastName;
+            return fullName;
+        }
+        public string GetValuesWithComma()
+        {
+            return $"{FirstName}, {LastName}, {CompanyName}," +
+                    $"{CompanyLocation}, {JobName}, {Qualification}," +
+                    $" {PersonQualification}, {PersonProfession}, {JobStartDate}," +
+                    $"{JobEndDate}, {JobPeriodDate}, {BasicSalary}";
+        }
     }
 
 

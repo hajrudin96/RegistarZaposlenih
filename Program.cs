@@ -45,11 +45,12 @@ namespace Vjezba5
                         BasicSalary = row.FindElement(By.XPath(".//td[13]")).Text,
 
                     };
+                    Console.WriteLine(employee.GetFullName());
                     data.Add(employee);
                 }
                 
                 IWebElement nextPageButton = driver.FindElement(By.XPath(".//a[@aria-label='Sljedeća page']"));
-                if (counter == 2)
+                if (counter == 0)
                 {
                     break;
                 }
@@ -60,13 +61,10 @@ namespace Vjezba5
 
             StreamWriter sw = new StreamWriter(@"E:\scraping\publicEmployees.csv", true);
 
-            for (int i = 0; i < data.Count; i++)
+            foreach (var employee in data)
             {
-                //for (int j = 0; j < data[i].Count; j++)
-                //{
-                //    sw.Write(data[i][j]);
-                //}
-                //sw.Flush();
+                sw.Write(employee.GetValuesWithComma() + "\n");
+                
             }
             sw.Close();
         }
