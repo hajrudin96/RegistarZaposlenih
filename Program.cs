@@ -62,11 +62,7 @@ namespace Vjezba5
 
             for (int i = 0; i < data.Count; i++)
             {
-                //for (int j = 0; j < data[i].Count; j++)
-                //{
-                //    sw.Write(data[i][j]);
-                //}
-                //sw.Flush();
+                
             }
             sw.Close();
         }
